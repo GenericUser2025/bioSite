@@ -1,0 +1,392 @@
+/* Base Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F0F8FF; /* Light blue background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Needed for pseudo-element positioning */
+}
+
+/* Sparkle Effect */
+body::after {
+    content: "";
+    position: fixed; /* Fixed position to cover the whole viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensures it does not interfere with user interaction */
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><circle cx="10" cy="10" r="2" fill="%23FF69B4" opacity="0.5"/><circle cx="30" cy="20" r="3" fill="%23FFD700" opacity="0.5"/><circle cx="50" cy="10" r="4" fill="%23FF69B4" opacity="0.5"/><circle cx="70" cy="30" r="2" fill="%23FFD700" opacity="0.5"/><circle cx="90" cy="20" r="5" fill="%23FF69B4" opacity="0.5"/><circle cx="20" cy="50" r="3" fill="%23FFD700" opacity="0.5"/><circle cx="40" cy="70" r="4" fill="%23FF69B4" opacity="0.5"/><circle cx="60" cy="60" r="2" fill="%23FFD700" opacity="0.5"/><circle cx="80" cy="80" r="3" fill="%23FF69B4" opacity="0.5"/><circle cx="90" cy="40" r="4" fill="%23FFD700" opacity="0.5"/><polygon points="5,25 10,10 15,25" fill="%23FFD700" opacity="0.5"/><polygon points="25,35 30,20 35,35" fill="%23FF69B4" opacity="0.5"/><polygon points="45,45 50,30 55,45" fill="%23FFD700" opacity="0.5"/><polygon points="65,55 70,40 75,55" fill="%23FF69B4" opacity="0.5"/><polygon points="85,65 90,50 95,65" fill="%23FFD700" opacity="0.5"/></svg>') repeat;
+    animation: sparkle 2.5s infinite;
+    z-index: -1; /* Ensure sparkle is behind other content */
+}
+
+@keyframes sparkle {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, 10px); }
+    100% { transform: translate(0, 0); }
+}
+
+/* Header Styles */
+header {
+    background-color: #FF69B4; /* Hot Pink */
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+/* Royla Koch Heading Styles */
+header h1 {
+    color: #FFFFFF; /* Pure White */
+    font-family: 'Pacifico', cursive;
+    margin: 0;
+    font-size: 3rem;
+    display: inline-block;
+    padding: 10px 20px; /* Space around text for bubbly effect */
+    background: linear-gradient(145deg, #FF69B4, #F7A4B4); /* Gradient for glossy effect */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3), inset -2px -2px 5px rgba(255, 255, 255, 0.4); /* Shadow for glossy effect */
+}
+
+/* Navigation Styles */
+nav {
+    margin-top: 15px; /* Space between heading and nav links */
+    display: flex; /* Flexbox for even spacing */
+    justify-content: center; /* Center align nav items */
+}
+
+nav a {
+    color: #FFFFFF;
+    margin: 0 20px; /* Space between links */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem; /* Slightly larger text for readability */
+}
+
+nav a:hover {
+    color: #F7A4B4; /* Barbie Pink */
+}
+
+/* Phone Frame Styles */
+.phone-frame {
+    position: relative;
+    width: 320px; /* Width of the phone */
+    height: 600px; /* Height of the phone */
+    background: #000000; /* Hot Pink for Barbie theme */
+    border-radius: 30px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin: 50px auto; /* Center the phone frame */
+    z-index: 1; /* Ensure phone frame is above the sparkle effect */
+}
+
+.phone-frame::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    width: 70px;
+    height: 10px;
+    background: #FFD700; /* Gold for the speaker */
+    border-radius: 5px;
+    transform: translateX(-50%);
+}
+
+.phone-frame::after {
+    content: '';
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    width: 50px;
+    height: 15px;
+    background: #FFD700; /* Gold for the home button */
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+.phone-screen {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 5% auto;
+    background: #000000; /* White screen */
+    border-radius: 20px;
+    overflow: hidden; /* Hide overflow to crop images properly */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Image Styles inside the Phone Frame */
+.cool-image,
+.home-image {
+    width: 100%; /* Scale images to fit within the phone screen */
+    height: auto;
+    display: block; /* Ensure images are displayed as block elements */
+}
+
+/* Landing Page Styles */
+.landing {
+    padding: 20px;
+    text-align: center;
+}
+
+.landing .portrait {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #FF69B4; /* Hot Pink */
+}
+
+.landing h2 {
+    color: #FF69B4; /* Hot Pink */
+    font-family: 'Pacifico', cursive;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #FF69B4; /* Hot Pink */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary:hover {
+    background-color: #F7A4B4; /* Barbie Pink */
+}
+
+/* About Page Styles */
+.bio {
+    display: flex; /* Use flexbox to align items side by side */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Space out items to the edges */
+    margin-top: 50px; /* Added margin to ensure space from header */
+    position: relative; /* Ensure positioning context for the button */
+}
+
+.bio .realtor-image {
+    display: block;
+    width: 240px; /* Increased size by 20% */
+    height: auto;
+    border: 5px solid #FF69B4;
+    border-radius: 50%;
+    margin-left: 45px; /* Adjust margin to shift the image to the right */
+}
+
+.bio-section {
+    background-color: #FFFAF0;
+    border: 1px solid #FF69B4;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 51%; /* Reduce width by 15% from 60% to 51% */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left; /* Align text to the left within the section */
+    margin-left: 20px; /* Space between the image and the text */
+    margin-top: 0; /* Align with top of the page */
+    margin-bottom: 20px; /* Space below the section */
+    position: relative; /* Position it in relation to its container */
+}
+
+/* Bubbly Chat-like List Items */
+.bio-section ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.bio-section ul li {
+    background-color: #FFB6C1;
+    border: 2px solid #FF69B4;
+    border-radius: 15px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 1rem; /* Adjust font size for reduced section size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Glamified Heading for About Royla */
+.bio-section h2 {
+    color: #FF69B4; /* Hot Pink */
+    font-family: 'Pacifico', cursive;
+    font-size: 2.1rem; /* Adjust font size for reduced section size */
+    margin-bottom: 15px; /* Adjust spacing below the heading */
+    text-shadow: 2px 2px 0 #FFFFFF; /* White shadow for a glam effect */
+}
+
+/* Kim Foundation Link */
+.btn-secondary {
+    display: block; /* Ensure it is a block element */
+    background-color: #FF69B4; /* Hot Pink */
+    color: #FFFFFF;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    position: fixed; /* Fix it in place relative to the viewport */
+    bottom: 20px; /* Space from the bottom */
+    right: 20px; /* Space from the right */
+    max-width: 200px; /* Limit the width */
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+/* Additional Styles for Image Container and Images on the Landing Page */
+.cool-image,
+.home-image {
+    max-width: 100%; /* Ensure images fit within their container */
+    height: auto;
+}
+
+/* Styles for the Bio Section */
+.realtor-image {
+    width: 50%; /* Adjust size to fit better with the content */
+    height: auto;
+    display: block; /* Ensure the image is displayed as a block element */
+    margin: 0 auto 20px; /* Center the image and add space below it */
+}
+
+/* Barbie Color Bubble Style for Landing Page */
+.barbie-bubble {
+    background-color: #FFC0CB; /* Classic Barbie Pink */
+    border: 2px solid #FF69B4; /* Hot Pink Border for contrast */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px; /* Constrain the width for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+    text-align: center; /* Center text in bubble */
+}
+
+.barbie-bubble h2 {
+    color: #FF1493; /* Deep Pink */
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 10px;
+    font-size: 2.5rem; /* Increase font size if needed */
+}
+
+.barbie-bubble p {
+    margin: 0 0 10px 0; /* Margin below the paragraph */
+    color: #4B0082; /* Indigo for a rich contrast */
+    font-size: 20px; /* Adjust font size */
+    line-height: 1.6; /* Line height for readability */
+}
+
+/* Hobbies Section Styles */
+.hobbies {
+    padding: 20px;
+    text-align: center; /* Center-align the text and images */
+}
+
+.hobbies h2 {
+    color: #FF69B4; /* Hot Pink */
+    font-family: 'Pacifico', cursive;
+    font-size: 36px; /* Larger font size for the title */
+    margin-bottom: 30px; /* Space below the title */
+    text-shadow: 2px 2px 0 #FFD700; /* Gold shadow for emphasis */
+}
+
+.hobby {
+    background-color: #000000; /* Black background for contrast */
+    border: 2px solid #FF69B4; /* Hot Pink border */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    margin: 20px auto; /* Space between each hobby bubble */
+    max-width: 600px; /* Constrain the width for better readability */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+    text-align: center; /* Center the content within each hobby bubble */
+}
+
+.hobby img {
+    width: 80%; /* Scale images to fit within the bubble */
+    height: auto;
+    border-radius: 10px; /* Rounded corners for images */
+    border: 3px solid #FF69B4; /* Hot Pink border for images */
+    margin-bottom: 10px; /* Space below the image */
+}
+
+.hobby p {
+    color: #FF69B4; /* Hot Pink text color */
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6; /* Improve readability */
+    text-shadow: 1px 1px 0 #FFD700; /* Gold shadow for emphasis */
+    margin: 0; /* Remove default margins */
+}
+
+/* Barbie Box Styles */
+.barbie-box {
+    position: relative;
+    width: 350px; /* Adjust width as needed */
+    height: 650px;
+    background-color: #FFB6C1; /* Light Pink Background */
+    border: 2px solid #FF69B4; /* Hot Pink Border */
+    border-radius: 15px; /* Rounded Corners */
+    padding: 10px; /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle Shadow */
+    margin-left: 60px; /* Space from the left */
+    margin-bottom: 20px; /* Space below the box */
+}
+
+/* Adjust the size of the realtor image inside the box */
+.realtor-image {
+    width: 100%; /* Make image fill the container */
+    height: auto;
+    border: none; /* Remove border since it's already styled by the box */
+}
+
+/* Updated Bio Section Styles */
+.bio {
+    display: flex; /* Use flexbox to align items side by side */
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between; /* Space out items to the edges */
+    margin-top: 50px; /* Added margin to ensure space from header */
+    position: relative; /* Ensure positioning context for the button */
+}
+
+/* Container for confetti animation */
+.confetti {
+    position: fixed; /* Fix the position relative to the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure it does not interfere with user interaction */
+    overflow: hidden; /* Hide overflow for cleaner edges */
+    z-index: -1; /* Ensure it’s behind other content */
+}
+
+.confetti::before,
+.confetti::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FF69B4 20%, #FFD700 50%, #FFB6C1 80%);
+    opacity: 0.8;
+    animation: confetti-fall 7s infinite;
+}
+
+.confetti::before {
+    animation-delay: 2s;
+}
+
+.confetti::after {
+    animation-delay: 3.5s;
+}
+
+/* Keyframes for confetti falling animation */
+@keyframes confetti-fall {
+    0% {
+        transform: translateY(-100%) rotate(0deg);
+    }
+    50% {
+        transform: translateY(50%) rotate(360deg);
+    }
+    100% {
+        transform: translateY(100%) rotate(720deg);
+    }
+}
