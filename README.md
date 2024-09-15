@@ -4,16 +4,16 @@ This project is a personal website built using HTML and CSS and is dedicated to 
 
 ## Files Included
 
-- `Index.html`: The main landing page.
-- `About.html`: Page with information about me.
-- `Hobbies.html`: Page detailing my hobbies.
+- `index.html`: The main landing page.
+- `about.html`: Page with information about me.
+- `hobbies.html`: Page detailing my hobbies.
 - `styles.css`: The main stylesheet.
 - `images/`: Directory containing images used in the site.
 
 ## Getting Started
 
-1. Clone this repository using `git clone https://github.com/yourAccountName/bioSite.git`.
-2. Open `Index.html` in a web browser to view the site.
+1. Clone this repository using `git clone https://github.com/GenericUser2025/bioSite.git`.
+2. Open `index.html` in a web browser to view the site.
 
 ## License
 
